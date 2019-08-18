@@ -1,0 +1,7 @@
+# Generated
+resources.c
+resources/*.*~
+
+# Compiled files
+*.o
+shutdown-dialog
