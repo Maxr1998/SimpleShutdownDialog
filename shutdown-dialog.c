@@ -1,6 +1,7 @@
 #include <gtk/gtk.h>
 #include <stdlib.h>
 #include <string.h>
+#include <unistd.h>
 
 #include "logout.h"
 
@@ -41,11 +42,14 @@ void on_window_show(GtkWidget *w, gpointer data) {
     GdkWindow *window = gtk_widget_get_window(w);
     GdkDisplay *display;
     GdkSeat *seat;
+    int timeout = 0;
 
     display = gdk_display_get_default();
     seat = gdk_display_get_default_seat(display);
 
-    gdk_seat_grab(seat, window, GDK_SEAT_CAPABILITY_KEYBOARD, TRUE, NULL, NULL, NULL, NULL);
+    while (gdk_seat_grab(seat, window, GDK_SEAT_CAPABILITY_KEYBOARD, TRUE, NULL, NULL, NULL, NULL) != GDK_GRAB_SUCCESS && ++timeout < 10) {
+        usleep(50000);
+    }
 }
 
 gboolean on_key(GtkWidget *widget, GdkEventKey *event, gpointer data) {
