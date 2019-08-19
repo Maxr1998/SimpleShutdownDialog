@@ -1,17 +1,12 @@
 #include <stdlib.h>
 #include <string.h>
 
-char *get_logout_command() {
-    char *cmd = malloc(16);
-    const char *current_desktop;
+const char *i3_exit_cmd = "i3-msg exit";
 
-    if (!cmd) return NULL;
-
-    cmd[0] = '\0';
-
-    current_desktop = getenv("XDG_CURRENT_DESKTOP");
+const char *get_logout_command() {
+    const char *current_desktop = getenv("XDG_CURRENT_DESKTOP");
     if (!strcmp(current_desktop, "i3")) {
-        strcpy(cmd, "i3-msg exit");
+        return i3_exit_cmd;
     }
-    return cmd;
+    return NULL;
 }

@@ -70,9 +70,7 @@ void on_click(GtkWidget *widget, gpointer data) {
     } else if (!strcmp(name, "suspend")) {
         system("systemctl suspend");
     } else if (!strcmp(name, "logout")) {
-        char *logout_cmd = get_logout_command();
-        system(logout_cmd);
-        free(logout_cmd);
+        system(get_logout_command());
     }
 
     gtk_main_quit();
