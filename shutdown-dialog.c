@@ -20,8 +20,10 @@ int main(int argc, char *argv[]) {
     //Options here
     while ((opt = getopt(argc, argv, "vh")) != -1) {
         switch (opt) {
-        case 'v': builder = gtk_builder_new_from_resource("/shutdown-dialog/ui-vertical.glade"); break;
-        case 'h': builder = gtk_builder_new_from_resource("/shutdown-dialog/ui-horizontal.glade"); break;
+        case 'v': 
+            builder = gtk_builder_new_from_resource("/shutdown-dialog/ui-vertical.glade"); break;
+        case 'h': 
+            builder = gtk_builder_new_from_resource("/shutdown-dialog/ui-horizontal.glade"); break;
         default:
             builder = gtk_builder_new_from_resource("/shutdown-dialog/ui-vertical.glade");
         }
