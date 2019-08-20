@@ -65,7 +65,7 @@
             <property name="margin_right">16</property>
             <property name="margin_top">16</property>
             <property name="margin_bottom">16</property>
-            <property name="orientation">horizon</property>
+            <property name="orientation">horizontal</property>
             <property name="row_spacing">8</property>
             <child>
               <object class="GtkButton" id="shutdown-button">
