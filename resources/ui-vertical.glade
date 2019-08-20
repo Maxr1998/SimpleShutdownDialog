@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Generated with glade 3.22.1 -->
+<interface>
+  <requires lib="gtk+" version="3.20"/>
+  <object class="GtkImage" id="close">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="resource">/shutdown-dialog/close.png</property>
+  </object>
+  <object class="GtkImage" id="logout">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="margin_left">16</property>
+    <property name="margin_right">16</property>
+    <property name="margin_top">16</property>
+    <property name="margin_bottom">16</property>
+    <property name="resource">/shutdown-dialog/logout.png</property>
+  </object>
+  <object class="GtkImage" id="reboot">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="margin_left">16</property>
+    <property name="margin_right">16</property>
+    <property name="margin_top">16</property>
+    <property name="margin_bottom">16</property>
+    <property name="resource">/shutdown-dialog/reboot.png</property>
+  </object>
+  <object class="GtkImage" id="shutdown">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="margin_left">16</property>
+    <property name="margin_right">16</property>
+    <property name="margin_top">16</property>
+    <property name="margin_bottom">16</property>
+    <property name="resource">/shutdown-dialog/shutdown.png</property>
+  </object>
+  <object class="GtkImage" id="suspend">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="margin_left">16</property>
+    <property name="margin_right">16</property>
+    <property name="margin_top">16</property>
+    <property name="margin_bottom">16</property>
+    <property name="resource">/shutdown-dialog/suspend.png</property>
+  </object>
+  <object class="GtkWindow" id="window">
+    <property name="can_focus">True</property>
+    <property name="events">GDK_KEY_PRESS_MASK | GDK_STRUCTURE_MASK</property>
+    <property name="type">popup</property>
+    <property name="window_position">center-always</property>
+    <property name="skip_taskbar_hint">True</property>
+    <property name="decorated">False</property>
+    <child>
+      <placeholder/>
+    </child>
+    <child>
+      <object class="GtkOverlay">
+        <property name="visible">True</property>
+        <property name="can_focus">False</property>
+        <child>
+          <object class="GtkGrid" id="grid">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="margin_left">16</property>
+            <property name="margin_right">16</property>
+            <property name="margin_top">16</property>
+            <property name="margin_bottom">16</property>
+            <property name="orientation">vertical</property>
+            <property name="row_spacing">8</property>
+            <child>
+              <object class="GtkButton" id="shutdown-button">
+                <property name="name">shutdown</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="has_focus">True</property>
+                <property name="receives_default">True</property>
+                <property name="image">shutdown</property>
+                <property name="relief">none</property>
+              </object>
+              <packing>
+                <property name="left_attach">0</property>
+                <property name="top_attach">0</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkButton" id="reboot-button">
+                <property name="name">reboot</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">True</property>
+                <property name="image">reboot</property>
+                <property name="relief">none</property>
+              </object>
+              <packing>
+                <property name="left_attach">1</property>
+                <property name="top_attach">0</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkButton" id="suspend-button">
+                <property name="name">suspend</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">True</property>
+                <property name="image">suspend</property>
+                <property name="relief">none</property>
+              </object>
+              <packing>
+                <property name="left_attach">2</property>
+                <property name="top_attach">0</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkButton" id="logout-button">
+                <property name="name">logout</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">True</property>
+                <property name="image">logout</property>
+                <property name="relief">none</property>
+              </object>
+              <packing>
+                <property name="left_attach">3</property>
+                <property name="top_attach">0</property>
+              </packing>
+            </child>
+          </object>
+          <packing>
+            <property name="index">-1</property>
+          </packing>
+        </child>
+        <child type="overlay">
+          <object class="GtkButton" id="close-button">
+            <property name="name">close</property>
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="receives_default">True</property>
+            <property name="halign">end</property>
+            <property name="valign">start</property>
+            <property name="margin_right">2</property>
+            <property name="margin_top">2</property>
+            <property name="image">close</property>
+            <property name="relief">none</property>
+          </object>
+        </child>
+      </object>
+    </child>
+  </object>
+</interface>
