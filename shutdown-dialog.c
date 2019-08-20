@@ -26,7 +26,7 @@ int main(int argc, char *argv[]) {
         case 'v': 
             builder = gtk_builder_new_from_resource("/shutdown-dialog/ui-vertical.glade"); break;
         case 'h': 
-            builder = gtk_builder_new_from_resource("/shutdown-dialog/ui-horizontal.glade"); break;
+            builder = gtk_builder_new_from_resource("/shutdown-dialog/ui-horizontal.glade");
     }
     
     window = GTK_WIDGET(gtk_builder_get_object(builder, "window")); 
