@@ -9,3 +9,7 @@ jobs:
       run: |
         sudo apt install -y libgtk-3-dev
         make
+    - uses: actions/upload-artifact@v1
+      with:
+        name: shutdown-dialog
+        path: shutdown-dialog
