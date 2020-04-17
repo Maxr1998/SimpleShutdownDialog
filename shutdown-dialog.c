@@ -14,8 +14,22 @@ int main(int argc, char *argv[]) {
     GtkWidget *window, *btn_close, *btn_shutdown, *btn_reboot, *btn_suspend, *btn_logout;
 
     gtk_init(&argc, &argv);
-
-    builder = gtk_builder_new_from_resource("/shutdown-dialog/ui.glade");
+    
+    int opt;
+    
+    //Defaults
+    builder = gtk_builder_new_from_resource("/shutdown-dialog/ui-vertical.glade");
+    
+    //Options here
+    while ((opt = getopt(argc, argv, "vh")) != -1) {
+        switch (opt) {
+        case 'v': 
+            builder = gtk_builder_new_from_resource("/shutdown-dialog/ui-vertical.glade"); break;
+        case 'h': 
+            builder = gtk_builder_new_from_resource("/shutdown-dialog/ui-horizontal.glade");
+        }
+    }
+    
     window = GTK_WIDGET(gtk_builder_get_object(builder, "window")); 
     btn_close = GTK_WIDGET(gtk_builder_get_object(builder, "close-button"));
     btn_shutdown = GTK_WIDGET(gtk_builder_get_object(builder, "shutdown-button"));
