@@ -6,6 +6,7 @@
         <file>shutdown.svg</file>
         <file>reboot.svg</file>
         <file>suspend.svg</file>
+        <file>hibernate.svg</file>
         <file>logout.svg</file>
     </gresource>
 </gresources>
