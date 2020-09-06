@@ -2,10 +2,10 @@
 <gresources>
     <gresource prefix="/shutdown-dialog">
         <file preprocess="xml-stripblanks">ui.glade</file>
-        <file>close.png</file>
-        <file>shutdown.png</file>
-        <file>reboot.png</file>
-        <file>suspend.png</file>
-        <file>logout.png</file>
+        <file>close.svg</file>
+        <file>shutdown.svg</file>
+        <file>reboot.svg</file>
+        <file>suspend.svg</file>
+        <file>logout.svg</file>
     </gresource>
 </gresources>

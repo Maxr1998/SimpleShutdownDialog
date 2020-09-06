@@ -5,7 +5,7 @@
   <object class="GtkImage" id="close">
     <property name="visible">True</property>
     <property name="can_focus">False</property>
-    <property name="resource">/shutdown-dialog/close.png</property>
+    <property name="resource">/shutdown-dialog/close.svg</property>
   </object>
   <object class="GtkImage" id="logout">
     <property name="visible">True</property>
@@ -14,7 +14,7 @@
     <property name="margin_right">16</property>
     <property name="margin_top">16</property>
     <property name="margin_bottom">16</property>
-    <property name="resource">/shutdown-dialog/logout.png</property>
+    <property name="resource">/shutdown-dialog/logout.svg</property>
   </object>
   <object class="GtkImage" id="reboot">
     <property name="visible">True</property>
@@ -23,7 +23,7 @@
     <property name="margin_right">16</property>
     <property name="margin_top">16</property>
     <property name="margin_bottom">16</property>
-    <property name="resource">/shutdown-dialog/reboot.png</property>
+    <property name="resource">/shutdown-dialog/reboot.svg</property>
   </object>
   <object class="GtkImage" id="shutdown">
     <property name="visible">True</property>
@@ -32,7 +32,7 @@
     <property name="margin_right">16</property>
     <property name="margin_top">16</property>
     <property name="margin_bottom">16</property>
-    <property name="resource">/shutdown-dialog/shutdown.png</property>
+    <property name="resource">/shutdown-dialog/shutdown.svg</property>
   </object>
   <object class="GtkImage" id="suspend">
     <property name="visible">True</property>
@@ -41,7 +41,7 @@
     <property name="margin_right">16</property>
     <property name="margin_top">16</property>
     <property name="margin_bottom">16</property>
-    <property name="resource">/shutdown-dialog/suspend.png</property>
+    <property name="resource">/shutdown-dialog/suspend.svg</property>
   </object>
   <object class="GtkWindow" id="window">
     <property name="can_focus">True</property>
