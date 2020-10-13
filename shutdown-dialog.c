@@ -4,6 +4,7 @@
 #include <unistd.h>
 
 #include "logout.h"
+#include "config.h"
 
 void on_window_show(GtkWidget *w, gpointer data);
 gboolean on_key(GtkWidget *widget, GdkEventKey *event, gpointer data);
@@ -65,19 +66,23 @@ gboolean on_key(GtkWidget *widget, GdkEventKey *event, gpointer data) {
 }
 
 void on_click(GtkWidget *widget, gpointer data) {
+    char *cmd = NULL;
     const char *name = gtk_widget_get_name(widget);
     printf("Executing %s\n", name);
     if (!strcmp(name, "shutdown")) {
-        system("poweroff");
+        cmd = SHUTDOWN_CMD;
     } else if (!strcmp(name, "reboot")) {
-        system("reboot");
+	cmd = REBOOT_CMD;
     } else if (!strcmp(name, "suspend")) {
-        system("systemctl suspend");
+	cmd = SUSPEND_CMD;
     } else if (!strcmp(name, "hibernate")) {
-        system("systemctl hibernate");
+	cmd = HIBERNATE_CMD;
     } else if (!strcmp(name, "logout")) {
-        system(get_logout_command());
+        cmd = get_logout_command();
     }
+
+    if (cmd)
+	system(cmd);
 
     gtk_main_quit();
 }
