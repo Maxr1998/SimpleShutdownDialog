@@ -72,17 +72,17 @@ void on_click(GtkWidget *widget, gpointer data) {
     if (!strcmp(name, "shutdown")) {
         cmd = SHUTDOWN_CMD;
     } else if (!strcmp(name, "reboot")) {
-	cmd = REBOOT_CMD;
+        cmd = REBOOT_CMD;
     } else if (!strcmp(name, "suspend")) {
-	cmd = SUSPEND_CMD;
+        cmd = SUSPEND_CMD;
     } else if (!strcmp(name, "hibernate")) {
-	cmd = HIBERNATE_CMD;
+        cmd = HIBERNATE_CMD;
     } else if (!strcmp(name, "logout")) {
         cmd = get_logout_command();
     }
 
     if (cmd)
-	system(cmd);
+        system(cmd);
 
     gtk_main_quit();
 }
