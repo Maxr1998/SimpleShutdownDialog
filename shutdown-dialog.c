@@ -81,8 +81,7 @@ void on_click(GtkWidget *widget, gpointer data) {
         cmd = get_logout_command();
     }
 
-    if (cmd)
-        system(cmd);
+    if (cmd) system(cmd);
 
     gtk_main_quit();
 }
