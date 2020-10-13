@@ -66,8 +66,9 @@ gboolean on_key(GtkWidget *widget, GdkEventKey *event, gpointer data) {
 }
 
 void on_click(GtkWidget *widget, gpointer data) {
-    char *cmd = NULL;
     const char *name = gtk_widget_get_name(widget);
+    char *cmd = NULL;
+
     printf("Executing %s\n", name);
     if (!strcmp(name, "shutdown")) {
         cmd = SHUTDOWN_CMD;
