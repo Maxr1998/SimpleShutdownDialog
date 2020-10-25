@@ -1,3 +1,5 @@
+// vim: et:ts=4:sw=4
+
 #include <gtk/gtk.h>
 #include <stdlib.h>
 #include <string.h>
