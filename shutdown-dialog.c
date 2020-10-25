@@ -70,23 +70,23 @@ gboolean on_key(GtkWidget *widget, GdkEventKey *event, gpointer data) {
     char *cmd = NULL;
 
     switch (event->keyval) {
-            case SHUTDOWN_HOTKEY:
-                    cmd = SHUTDOWN_CMD;
-                    break;
-            case REBOOT_HOTKEY:
-                    cmd = REBOOT_CMD;
-                    break;
-            case SUSPEND_HOTKEY:
-                    cmd = SUSPEND_CMD;
-                    break;
-            case HIBERNATE_HOTKEY:
-                    cmd = HIBERNATE_CMD;
-                    break;
+        case SHUTDOWN_HOTKEY:
+            cmd = SHUTDOWN_CMD;
+            break;
+        case REBOOT_HOTKEY:
+            cmd = REBOOT_CMD;
+            break;
+        case SUSPEND_HOTKEY:
+            cmd = SUSPEND_CMD;
+            break;
+        case HIBERNATE_HOTKEY:
+            cmd = HIBERNATE_CMD;
+            break;
     }
 
     if (cmd) {
         system(cmd);
-	gtk_main_quit();
+        gtk_main_quit();
         return TRUE;
     }
 
