@@ -3,7 +3,7 @@
     <gresource prefix="/shutdown-dialog">
         <file preprocess="xml-stripblanks">ui.glade</file>
         <file>close.svg</file>
-        <file>shutdown.svg</file>
+        <file>poweroff.svg</file>
         <file>reboot.svg</file>
         <file>suspend.svg</file>
         <file>hibernate.svg</file>
