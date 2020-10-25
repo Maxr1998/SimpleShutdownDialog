@@ -14,14 +14,14 @@ void on_click(GtkWidget *widget, gpointer data);
 
 int main(int argc, char *argv[]) {
     GtkBuilder *builder;
-    GtkWidget *window, *btn_close, *btn_shutdown, *btn_reboot, *btn_suspend, *btn_hibernate, *btn_logout;
+    GtkWidget *window, *btn_close, *btn_poweroff, *btn_reboot, *btn_suspend, *btn_hibernate, *btn_logout;
 
     gtk_init(&argc, &argv);
 
     builder = gtk_builder_new_from_resource("/shutdown-dialog/ui.glade");
     window = GTK_WIDGET(gtk_builder_get_object(builder, "window")); 
     btn_close = GTK_WIDGET(gtk_builder_get_object(builder, "close-button"));
-    btn_shutdown = GTK_WIDGET(gtk_builder_get_object(builder, "shutdown-button"));
+    btn_poweroff = GTK_WIDGET(gtk_builder_get_object(builder, "poweroff-button"));
     btn_reboot = GTK_WIDGET(gtk_builder_get_object(builder, "reboot-button"));
     btn_suspend = GTK_WIDGET(gtk_builder_get_object(builder, "suspend-button"));
     btn_hibernate = GTK_WIDGET(gtk_builder_get_object(builder, "hibernate-button"));
@@ -32,7 +32,7 @@ int main(int argc, char *argv[]) {
     g_signal_connect(window, "destroy", G_CALLBACK(gtk_main_quit), NULL);
 
     g_signal_connect(btn_close, "clicked", G_CALLBACK(gtk_main_quit), NULL);
-    g_signal_connect(btn_shutdown, "clicked", G_CALLBACK(on_click), NULL);
+    g_signal_connect(btn_poweroff, "clicked", G_CALLBACK(on_click), NULL);
     g_signal_connect(btn_reboot, "clicked", G_CALLBACK(on_click), NULL);
     g_signal_connect(btn_suspend, "clicked", G_CALLBACK(on_click), NULL);
     g_signal_connect(btn_hibernate, "clicked", G_CALLBACK(on_click), NULL);
@@ -70,8 +70,8 @@ gboolean on_key(GtkWidget *widget, GdkEventKey *event, gpointer data) {
     char *cmd = NULL;
 
     switch (event->keyval) {
-        case SHUTDOWN_HOTKEY:
-            cmd = SHUTDOWN_CMD;
+        case POWEROFF_HOTKEY:
+            cmd = POWEROFF_CMD;
             break;
         case REBOOT_HOTKEY:
             cmd = REBOOT_CMD;
@@ -98,8 +98,8 @@ void on_click(GtkWidget *widget, gpointer data) {
     char *cmd = NULL;
 
     printf("Executing %s\n", name);
-    if (!strcmp(name, "shutdown")) {
-        cmd = SHUTDOWN_CMD;
+    if (!strcmp(name, "poweroff")) {
+        cmd = POWEROFF_CMD;
     } else if (!strcmp(name, "reboot")) {
         cmd = REBOOT_CMD;
     } else if (!strcmp(name, "suspend")) {
