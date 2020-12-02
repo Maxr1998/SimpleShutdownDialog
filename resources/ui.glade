@@ -121,7 +121,7 @@
             </child>
             <child>
               <object class="GtkButton" id="hibernate-button">
-                <property name="name">suspend</property>
+                <property name="name">hibernate</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>
